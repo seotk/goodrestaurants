@@ -1,0 +1,127 @@
+.banner1 {
+  background-color: var(--point-color1);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner1 > p > span {
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+.banner2 {
+  height: 70px;
+  background-color: #ff711250;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner2 > span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.form {
+  margin-top: 65px;
+}
+.formCon {
+  max-width: 1000px;
+  width: calc(100% -2rem);
+  margin: auto;
+}
+.formList {
+  padding: 2rem 3rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.formList > p:nth-of-type(1) {
+  display: flex;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  font-size: 24px;
+}
+label > span {
+  font-size: 24px;
+}
+input {
+  border-radius: 10px;
+  border: 2px solid var(--point-color1);
+  height: 45px;
+  margin-top: 1rem;
+}
+label:nth-child() {
+  display: block;
+}
+#food-select {
+  width: 380px;
+  height: 46px;
+  border-radius: 10px;
+  border: 2px solid var(--point-color1);
+}
+.food,
+.detail {
+  width: 100%;
+}
+.adress,
+.img,
+.accords {
+  width: 80%;
+}
+.name {
+  width: 60%;
+  margin-right: 1rem;
+}
+.star {
+  position: relative;
+  width: 30%;
+}
+.time,
+.tel {
+  width: 41%;
+}
+.key {
+  width: 18%;
+}
+#key1,
+#key2,
+#key3,
+#key4 {
+  width: 90%;
+}
+#name {
+  width: 90%;
+}
+#star {
+  width: 50%;
+}
+.starStandard {
+  position: absolute;
+  width: 30%;
+  top: 86px;
+  right: 25px;
+  font-size: 24px;
+}
+#time,
+#tel {
+  width: 90%;
+}
+.time {
+  margin-right: 0.8rem;
+}
+.accords > label > span {
+  font-size: 12px;
+  color: #909090;
+}
+.accordsSearh {
+  padding-top: 2rem;
+  font-size: 16px;
+  font-weight: 700;
+}

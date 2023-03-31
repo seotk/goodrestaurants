@@ -1,0 +1,81 @@
+@charset "utf-8";
+:root {
+  --point-color1: #ff7012;
+}
+img {
+  width: 100%;
+}
+.mw1150 {
+  max-width: 1150px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+.hd {
+  height: 180px;
+  display: flex;
+  align-items: center;
+}
+.hdCon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+h1 {
+  flex-grow: 1;
+}
+h1 > img {
+  width: 105px;
+}
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  padding-right: 20.3rem;
+}
+.menu > a,
+.menu > span {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.home {
+  margin-left: 2rem;
+  position: relative;
+}
+/* .add::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -16px;
+  width: 2px;
+  height: 25px;
+  background-color: black;
+} */
+
+/* =========================================================================== */
+
+.ft {
+  background-color: black;
+  height: 200px;
+}
+.ftCon {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft1 > img {
+  width: 50px;
+}
+.ft1 > p {
+  color: white;
+  font-weight: 700;
+  margin: 2rem 0;
+}
+.ft3 {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+}
+.ft3 > p {
+  color: white;
+  font-weight: 700;
+  padding-top: 1rem;
+}

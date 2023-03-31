@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/my_reset.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/delete.js" defer></script>
+    <script src="/js/data.js" defer></script>
+    <script src="/js/key.js" defer></script>
+    <link rel="stylesheet" href="/css/header_footer.css" />
+    <link rel="stylesheet" href="/css/list.css" />
+    <title>goodrestaurant</title>
+  </head>
+  <body>
+    <%- include('header.ejs') %>
+    <section class="banner1 mw1150">
+      <p>
+        <span>지금 바로 당신의 입맛에 맞는 맛집을 등록하고</span> <br></br>
+        <span> 다른 사람들의 맛집을 구경하세요!</span>
+      </p>
+    </section>
+    <section class="banner2 mw1150">
+      <div class="listBtnCon">
+        <button class="listBtn on" data-name="전체">전체</button>
+        <button class="listBtn" data-name="한식">한식</button>
+        <button class="listBtn" data-name="중식">중식</button>
+        <button class="listBtn" data-name="일식">일식</button>
+        <button class="listBtn" data-name="양식">양식</button>
+        <button class="listBtn" data-name="기타">기타</button>
+      </div>
+    </section>
+  </>
+    <section class="mainContents">
+      <ul class="listContainer mw1150">
+        <% for (list in post) {%>
+        <li class="list">
+          <a href="/detail/<%= post[list]._id%>">
+            <p hidden>번호 : <%= post[list]._id%></p>
+            <p hidden>분류 : <%= post[list].postFood%></p>
+            <img class="listImg" src="<%= post[list].postImg%>" alt="식당 이미지"></img>
+            <div class="listText">
+              <p class="listKeyWord">
+                <span><%= post[list].postKey1%></span>
+                <span><%= post[list].postKey2%></span>
+                <span><%= post[list].postKey3%></span>
+                <span><%= post[list].postKey4%></span>
+              </p>
+              <p class="listTitle">
+                <span class="listName"><%= post[list].postName%></span>
+                <span class="listStar"><%= post[list].postStar%></span>
+              </p>
+              <p class="listAdress"><%= post[list].postAdress%></p>
+              <p class="listSet">
+                <span class="listTime"><%= post[list].postTime%></span>
+                <span class="listClick">자세히 보기</span>
+                <!-- <span class="listDetail"><%= post[list].detail%></span>/ -->
+              </p>
+            </div>
+          </a>
+        </li>
+        <%}%>
+      </ul>
+    </section>
+    <%- include('footer.ejs') %>
+  </body>
+</html>

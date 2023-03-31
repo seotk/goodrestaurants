@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/my_reset.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/delete.js" defer></script>
+    <script src="/js/key.js" defer></script>
+    <script src="/js/input.js" defer></script>
+
+    <link rel="stylesheet" href="/css/header_footer_sub.css" />
+    <link rel="stylesheet" href="/css/write.css" />
+    <title>goodrestaurant-write</title>
+  </head>
+  <body>
+    <%- include('header_sub.ejs') %>
+    <section class="banner1 mw1150">
+      <p>
+        <span>당신의 입맛에 맞는 맛집을 추천해주세요!</span>
+      </p>
+    </section>
+    <section class="banner2 mw1150">
+      <span>등록하기</span>
+    </section>
+    <form action="/add" method="post" class="form mw1150">
+      <ul class="formCon">
+        <li class="formList">
+          <p class="food">
+            <label for="food-select"></label>
+            <select id="food-select" name="food">
+              <option value="">분류</option>
+              <option value="전체">전체</option>
+              <option value="한식">한식</option>
+              <option value="중식">중식</option>
+              <option value="일식">일식</option>
+              <option value="양식">양식</option>
+              <option value="기타">기타</option>
+            </select>
+          </p>
+          <p class="name">
+            <label
+              >음식점 이름<input type="text" id="name" name="name"
+            /></label>
+          </p>
+          <p class="star">
+            <label>별점<input type="text" id="star" name="star" /></label
+            ><span class="starStandard">/ 5</span>
+          </p>
+          <p class="key">
+            <label
+              >키워드1<input type="text" id="key1" name="key1" value="#"
+            /></label>
+          </p>
+          <p class="key">
+            <label
+              >2<input type="text" id="key2" name="key2" value="#"
+            /></label>
+          </p>
+          <p class="key">
+            <label
+              >3<input type="text" id="key3" name="key3" value="#"
+            /></label>
+          </p>
+          <p class="key">
+            <label
+              >4<input type="text" id="key4" name="key4" value="#"
+            /></label>
+          </p>
+          <p class="adress">
+            <label>주소<input type="text" id="adress" name="adress" /></label>
+          </p>
+          <p class="accords">
+            <label
+              >좌표<span>,를 기준으로 앞뒤로 값을 넣어주세요!</span
+              ><input type="text" id="accords" name="accords" value=","
+            /></label>
+          </p>
+          <a href="/accords" class="accordsSearh"> 좌표구하기</a>
+          <p class="img">
+            <label
+              >이미지<span>(URL)</span> <input type="text" id="img" name="img"
+            /></label>
+          </p>
+          <p class="time">
+            <label>영업시간<input type="text" id="time" name="time" /></label>
+          </p>
+          <p class="tel">
+            <label>전화번호<input type="text" id="tel" name="tel" /></label>
+          </p>
+          <p class="detail">
+            <label>설명<input type="text" id="detail" name="detail" /></label>
+          </p>
+          <p class="good" hidden>
+            <label
+              >좋아요<input type="number" id="good" name="good" value="0"
+            /></label>
+          </p>
+          <input type="submit" id="submitBtn" value="입력" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

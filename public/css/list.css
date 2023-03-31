@@ -1,0 +1,119 @@
+@charset "utf-8";
+:root {
+  --point-color1: #ff7012;
+}
+img {
+  width: 100%;
+}
+.mw1150 {
+  max-width: 1150px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+.banner1 {
+  background-color: var(--point-color1);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner1 > p > span {
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+.banner2 {
+  height: 105px;
+  background-color: #ff711250;
+}
+.listBtnCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 105px;
+
+}
+.listBtn {
+  margin: 1rem;
+  outline: none;
+  border: none;
+  background-color: #ff701260;
+  color: black;
+  border-radius: 5px;
+  padding: 0.8rem 2rem;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.listBtn:hover {
+  background-color: lightblue;
+}
+.listBtn.on {
+  background-color: white;
+  color: var(--point-color1);
+}
+.mainContents {
+  margin-top: 65px;
+  background-color: #ebebeb;
+}
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: auto;
+  gap: 1rem;
+  padding: 3rem;
+}
+.list {
+  border-radius: 10px;
+  background-color: rgb(253, 253, 253);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 5px 1px lightgray;
+  transition: 0.5s;
+}
+.listImg {
+  height: 60%;
+}
+.listText {
+  height: 40%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.listKeyWord {
+  font-size: 8px;
+  color: #a0a0a0;
+}
+.listTitle {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  flex-grow: 0.5;
+}
+.listName {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.listStar {
+  color: var(--point-color1);
+  font-weight: 700;
+}
+.listAdress,
+.listTime,
+.listClick {
+  font-size: 12px;
+}
+.listSet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listClick {
+  color: var(--point-color1);
+}

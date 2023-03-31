@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/my_reset.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e151304e81a55d57cdc632da3a5b387"
+    ></script>
+    <script src="/js/delete.js" defer></script>
+    <script src="/js/key.js" defer></script>
+    <script src="/js/map.js" defer></script>
+    <link rel="stylesheet" href="/css/header_footer_sub.css" />
+    <link rel="stylesheet" href="/css/list.css" />
+    <link rel="stylesheet" href="/css/detail.css" />
+    <title>goodrestaurant</title>
+  </head>
+  <body>
+    <%- include('header_sub.ejs') %>
+    <section class="banner1 mw1150">
+      <p>
+        <span>당신의 입맛에 맞는 맛집은 어디인가요?</span>
+      </p>
+    </section>
+    <section class="banner2 mw1150">
+      <span>맛집 소개</span>
+    </section>
+    <section class="detailContents">
+      <div class="detailContentsWrap">
+        <article class="detailCon1">
+          <img src="<%= data.postImg%>" class="detailImg" alt="식당 이미지" />
+          <div class="detailText">
+            <p
+              class="detailGood"
+              data-good="<%= data.postGood%>"
+              data-id="<%= data._id%>"
+            >
+              <img src="/img/heart-solid.svg" alt="" /><span
+                ><%= data.postGood%></span
+              >
+            </p>
+            <p class="detailName"><span><%= data.postName%></span></p>
+            <p class="detailStar">
+              <img src="/img/star-solid.svg" alt="" /><span
+                ><%= data.postStar%></span
+              >
+            </p>
+            <p class="detailAdress">
+              <img src="/img/location-dot-solid.svg" alt="" /><span
+                ><%= data.postAdress%></span
+              >
+            </p>
+            <p class="detailTime">
+              <img src="/img/clock-solid.svg" alt="" /><span
+                ><%= data.postTime%></span
+              >
+            </p>
+            <p class="detailTel">
+              <img src="/img/house-solid.svg" alt="" /><span
+                ><%= data.postTel%></span
+              >
+            </p>
+          </div>
+        </article>
+        <article class="detailCon2">
+          <div class="KakaoMap">
+            <div id="map"></div>
+          </div>
+          <div class="detailText2">
+            <p class="detailDetail"><span><%= data.postDetail%></span></p>
+            <a class="edit" href="/edit/<%= data._id %>">수정</a>
+            <button class="delete" data-id="<%= data._id%>">삭제</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+  <script></script>
+</html>

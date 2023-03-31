@@ -1,0 +1,79 @@
+img {
+  width: 100%;
+}
+.banner1 {
+  background-color: var(--point-color1);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.banner1 > p > span {
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+.banner2 {
+  height: 70px;
+  background-color: #ff711250;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner2 > span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.detailContents {
+  background-color: #eaeaea;
+}
+.detailContentsWrap {
+  max-width: 1000px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  margin-top: 65px;
+  display: flex;
+  height: 650px;
+  padding: 1rem;
+}
+.detailCon1,
+.detailCon2 {
+  width: 50%;
+  padding: 1rem;
+  background-color: white;
+}
+.detailImg {
+  height: 40%;
+}
+
+.detailText > p > img {
+  width: 30px;
+  margin-right: 2rem;
+}
+.detailText {
+  padding: 2rem 3rem;
+}
+.detailText > p {
+  padding: 0.25rem 0;
+}
+.detailGood {
+  cursor: pointer;
+  border: 1px solid red;
+}
+.detailGood.on {
+  background-color: red;
+}
+#goodTem:hover {
+  color: red;
+}
+.KakaoMap {
+  width: 100%;
+}
+.KakaoMap > #map {
+  max-width: 400px;
+  width: calc(100% - 1rem);
+  margin: auto;
+  height: 300px;
+}
