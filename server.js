@@ -20,6 +20,7 @@ async function main() {
     await client.connect();
     const postCollection = client.db("project3").collection("post");
     const counterCollection = client.db("project3").collection("counter");
+    const categoryCollection = client.db("project3").collection("category");
     console.log("서버에 연결됬다");
 
     //GET
@@ -33,8 +34,8 @@ async function main() {
     app.get("/write", (req, res) => {
       res.render("write.ejs");
     });
-    app.get("/accords", (req, res) => {
-      res.render("accords.ejs");
+    app.get("/acoords", (req, res) => {
+      res.render("acoords.ejs");
     });
 
     app.get("/detail/:id", async function (req, res) {
@@ -60,6 +61,7 @@ async function main() {
         name,
         time,
         adress,
+        acoords,
         star,
         tel,
         img,
@@ -79,6 +81,7 @@ async function main() {
         postName: name,
         postTime: time,
         postAdress: adress,
+        postAcoords: acoords,
         postStar: star,
         postTel: tel,
         postImg: img,
@@ -100,7 +103,7 @@ async function main() {
       req.body._id = parseInt(req.body._id);
       await postCollection.deleteOne(req.body);
       res.status(200).send({ message: "성공" });
-      // res.redirect("/");
+      res.redirect("/");
     });
 
     //PUT
@@ -112,6 +115,7 @@ async function main() {
         name,
         time,
         adress,
+        acoords,
         star,
         tel,
         img,
@@ -130,6 +134,7 @@ async function main() {
             postName: name,
             postTime: time,
             postAdress: adress,
+            postAcoords: acoords,
             postStar: star,
             postTel: tel,
             postImg: img,

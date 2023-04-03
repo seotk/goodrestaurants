@@ -11,10 +11,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="/js/delete.js" defer></script>
+    <script src="/js/click.js" defer></script>
     <script src="/js/key.js" defer></script>
     <script src="/js/input.js" defer></script>
-    <link rel="stylesheet" href="/css/header_footer_sub.css" />
+    <link rel="stylesheet" href="/css/header_footer.css" />
     <link rel="stylesheet" href="/css/write.css" />
     <title>goodrestaurant-edit</title>
   </head>
@@ -26,7 +26,7 @@
       </p>
     </section>
     <section class="banner2 mw1150">
-      <span>등록하기</span>
+      <span>수정하기</span>
     </section>
     <form action="/edit?_method=put" method="post" class="form mw1150">
       <input type="text" name="id" value="<%= post._id %>" hidden />
@@ -34,18 +34,16 @@
         <li class="formList">
           <p class="food">
             <label for="food-select"></label>
-            <select
-              id="food-select"
-              name="food"
-            >
+            <select id="food-select" name="food">
               <option value="">분류</option>
-              <option value="전체">전체</option>
-              <option value="한식">한식</option>
-              <option value="중식">중식</option>
-              <option value="일식">일식</option>
-              <option value="양식">양식</option>
-              <option value="기타">기타</option>
+              <option value="전체" <%= post.postFood == '전체' ? 'selected' : '' %>>전체</option>
+              <option value="한식" <%= post.postFood == '한식' ? 'selected' : '' %>>한식</option>
+              <option value="중식" <%= post.postFood == '중식' ? 'selected' : '' %>>중식</option>
+              <option value="일식" <%= post.postFood == '일식' ? 'selected' : '' %>>일식</option>
+              <option value="양식" <%= post.postFood == '양식' ? 'selected' : '' %>>양식</option>
+              <option value="기타" <%= post.postFood == '기타' ? 'selected' : '' %>>기타</option>
             </select>
+            
           </p>
           <p class="name">
             <label
@@ -110,14 +108,21 @@
                 value="<%= post.postAdress%>"
             /></label>
           </p>
+          <p class="acoords">
+            <label
+              >좌표<span>,를 기준으로 앞뒤로 값을 넣어주세요!</span
+              ><input
+                type="text"
+                id="acoords"
+                name="acoords"
+                value="<%= post.postAcoords%>"
+            /></label>
+          </p>
+          <a href="/acoords" class="acoordsSearh"> 좌표구하기</a>
           <p class="img">
             <label
               >이미지<span>(URL)</span>
-              <input
-                type="text"
-                id="img"
-                name="img"
-                value="<%= post.postImg%>"
+              <input type="text" id="img" name="img" value="<%= post.postImg%>"
             /></label>
           </p>
           <p class="time">
@@ -147,7 +152,7 @@
                 value="<%= post.postDetail%>"
             /></label>
           </p>
-          <p class="good" >
+          <p class="good" hidden>
             <label
               >좋아요<input
                 type="number"

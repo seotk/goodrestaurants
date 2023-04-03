@@ -1,3 +1,49 @@
+.deleteModalCon.on {
+  display: flex;
+}
+.deleteModalCon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.deleteModal {
+  width: 30%;
+  height: 15%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+.deleteModal > * {
+}
+.deleteModal > p {
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleteModal > p > span {
+  font-size: 16px;
+  font-weight: 500;
+}
+.cancel,
+.deleteOk {
+  outline: none;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
 img {
   width: 100%;
 }
@@ -52,6 +98,10 @@ img {
   width: 30px;
   margin-right: 2rem;
 }
+.detailText > p > span {
+  font-size: 18px;
+  font-weight: 500;
+}
 .detailText {
   padding: 2rem 3rem;
 }
@@ -60,10 +110,46 @@ img {
 }
 .detailGood {
   cursor: pointer;
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
 }
 .detailGood.on {
-  background-color: red;
+}
+.detailGood > span {
+}
+.detailText > .detailName > span {
+  font-size: 28px;
+  font-weight: 700;
+}
+.detailText > .detailAdress > img {
+  width: 24px;
+  text-align: center;
+  margin-left: 3px;
+}
+.detailText2 {
+  max-width: 400px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.detailDetail {
+  height: 200px;
+  background-color: #eaeaea;
+  width: 100%;
+}
+.edit {
+  margin-top: 0.1rem;
+}
+.delete {
+  margin-left: 2rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 }
 #goodTem:hover {
   color: red;

@@ -15,10 +15,10 @@
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e151304e81a55d57cdc632da3a5b387"
     ></script>
-    <script src="/js/delete.js" defer></script>
+    <script src="/js/click.js" defer></script>
     <script src="/js/key.js" defer></script>
     <script src="/js/map.js" defer></script>
-    <link rel="stylesheet" href="/css/header_footer_sub.css" />
+    <link rel="stylesheet" href="/css/header_footer.css" />
     <link rel="stylesheet" href="/css/list.css" />
     <link rel="stylesheet" href="/css/detail.css" />
     <title>goodrestaurant</title>
@@ -82,6 +82,48 @@
         </article>
       </div>
     </section>
+    <div class="deleteModalCon">
+      <div class="deleteModal">
+        <p><span>정말로 삭제 하시겠습니까?</span></p>
+        <button class="cancel">뒤로가기</button>
+        <button disabled class="deleteOk" data-id=" <%= data._id%>">
+          삭제
+        </button>
+      </div>
+    </div>
+    <%- include('footer.ejs') %>
+    <script>
+      window.addEventListener("resize", function () {
+        setTimeout(function () {
+          location.reload();
+        }, 3000); // 3초(3000ms) 후에 리로드
+      });
+
+      var container = document.getElementById("map");
+
+      var coords = "<%= data.postAcoords%>".split(","); // 쉼표로 구분된 문자열을 배열로 변환
+      var options = {
+        center: new kakao.maps.LatLng(
+          parseFloat(coords[0]),
+          parseFloat(coords[1])
+        ),
+        level: 3,
+      };
+
+      var map = new kakao.maps.Map(container, options);
+      // 마커가 표시될 위치입니다
+      var markerPosition = new kakao.maps.LatLng(
+        parseFloat(coords[0]),
+        parseFloat(coords[1])
+      );
+
+      // 마커를 생성합니다
+      var marker = new kakao.maps.Marker({
+        position: markerPosition,
+      });
+
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
+    </script>
   </body>
-  <script></script>
 </html>

@@ -29,7 +29,7 @@ h1 > img {
 .title {
   font-size: 42px;
   font-weight: 700;
-  padding-right: 12rem;
+  padding-right: 20.3rem;
 }
 .menu > a,
 .menu > span {
@@ -37,11 +37,12 @@ h1 > img {
   font-weight: 700;
   cursor: pointer;
 }
-.add {
+.home {
   margin-left: 2rem;
   position: relative;
 }
-.add::before {
+
+/* .add::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -49,7 +50,7 @@ h1 > img {
   width: 2px;
   height: 25px;
   background-color: black;
-}
+} */
 
 /* =========================================================================== */
 
@@ -61,6 +62,7 @@ h1 > img {
   padding: 3rem 1rem;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 0;
 }
 .ft1 > img {
   width: 50px;
@@ -70,6 +72,21 @@ h1 > img {
   font-weight: 700;
   margin: 2rem 0;
 }
+.ft2 {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.ft2 > a {
+  margin-left: 0.5rem;
+}
+.ft2 > a > img {
+  width: 40px;
+}
+.ft2 > a:nth-child(2) > img {
+  background-color: white;
+  border-radius: 50%;
+}
 .ft3 {
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.6);
@@ -78,4 +95,32 @@ h1 > img {
   color: white;
   font-weight: 700;
   padding-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .hdCon {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .menu {
+    width: 100%;
+    text-align: end;
+  }
+}
+@media (max-width: 700px) {
+  h1 > img {
+    width: 80px;
+  }
+  .hdCon {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+  .title {
+    display: inline-block;
+    font-size: 32px;
+    padding-right: 0;
+  }
+  .menu {
+    display: none;
+  }
 }

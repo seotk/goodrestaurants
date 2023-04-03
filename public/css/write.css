@@ -70,9 +70,10 @@ label:nth-child() {
 .detail {
   width: 100%;
 }
+
 .adress,
 .img,
-.accords {
+.acoords {
   width: 80%;
 }
 .name {
@@ -113,15 +114,25 @@ label:nth-child() {
 #tel {
   width: 90%;
 }
+#detail {
+  height: 200px;
+}
 .time {
   margin-right: 0.8rem;
 }
-.accords > label > span {
+.acoords > label > span {
   font-size: 12px;
   color: #909090;
 }
-.accordsSearh {
+.acoordsSearh {
   padding-top: 2rem;
   font-size: 16px;
   font-weight: 700;
+}
+#submitBtn {
+  cursor: pointer;
+  width: 30%;
+  margin: auto;
+  margin-top: 2rem;
+  background-color: #70d7ff;
 }

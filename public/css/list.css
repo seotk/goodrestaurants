@@ -12,11 +12,13 @@ img {
 }
 .banner1 {
   background-color: var(--point-color1);
-  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.banner1 > p {
+  padding: 2rem 1rem;
 }
 .banner1 > p > span {
   line-height: 40px;
@@ -25,7 +27,6 @@ img {
   color: white;
 }
 .banner2 {
-  height: 105px;
   background-color: #ff711250;
 }
 .listBtnCon {
@@ -33,8 +34,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 105px;
-
+  padding: 1rem;
 }
 .listBtn {
   margin: 1rem;
@@ -68,12 +68,16 @@ img {
   padding: 3rem;
 }
 .list {
+  display: none;
   border-radius: 10px;
   background-color: rgb(253, 253, 253);
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 0 5px 1px lightgray;
   transition: 0.5s;
+}
+.list.on {
+  display: block;
 }
 .listImg {
   height: 60%;
@@ -99,6 +103,9 @@ img {
   font-size: 16px;
   font-weight: 700;
   margin-right: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .listStar {
   color: var(--point-color1);
@@ -116,4 +123,29 @@ img {
 }
 .listClick {
   color: var(--point-color1);
+}
+.menuMo {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .mw1150 {
+    margin: 0;
+    width: 100%;
+  }
+  .menuMo {
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: aqua;
+    cursor: pointer;
+  }
+  .menuMo > span {
+    font-weight: 700;
+  }
+  .banner1 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
 }
