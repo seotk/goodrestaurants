@@ -55,19 +55,17 @@ $(".detailGood").click(function (e) {
       console.log("err");
     });
 });
-$(".submitBtn").click(function (e) {
-  $.ajax({
-    method: "PUT",
-    url: "/edit",
-    data: {
-      /* 수정할 데이터 */
-    },
-  })
-    .done(function (data) {
-      // 수정이 완료되면 루트 페이지로 이동합니다.
-      location.href = "/detail.ejs";
-    })
-    .fail(function (xhr, status, error) {
-      // 에러가 발생한 경우 처리할 내용을 작성합니다.
-    });
-});
+// $(".submitBtn").click(function (e) {
+//   $.ajax({
+//     method: "PUT",
+//     url: "/edit",
+//     data: {
+//       /* 수정할 데이터 */
+//     },
+//   })
+//     .done(function (data) {
+//       location.href = "/detail.ejs";
+//     })
+//     .fail(function (xhr, status, error) {
+//     });
+// });
