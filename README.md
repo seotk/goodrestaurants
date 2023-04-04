@@ -8,8 +8,10 @@
 
 ## 시안
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdePdAL%2Fbtr7OPxEx7N%2FQ7cUHwUvZ3rh1CHhOskcm0%2Fimg.png" width="300px" height="30%" title="메인시안" alt="goodrestaurant">
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZDFAI%2Fbtr7MUlUXvy%2FOqqB2Kw72dbEFc91eJZd2K%2Fimg.png" width="130px" height="30%" title="반응형시안" alt="goodrestaurant">
+<div style="display:flex">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdePdAL%2Fbtr7OPxEx7N%2FQ7cUHwUvZ3rh1CHhOskcm0%2Fimg.png" width="300px" height="30%" title="메인시안" alt="goodrestaurant">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZDFAI%2Fbtr7MUlUXvy%2FOqqB2Kw72dbEFc91eJZd2K%2Fimg.png" width="130px" height="30%" title="반응형시안" alt="goodrestaurant">
+</div>
 
 ## 개발기간
 
