@@ -146,7 +146,7 @@ async function main() {
         }
       );
       console.log("수정완료");
-      res.status(200).send({ message: "성공" });
+      // res.status(200).send({ message: "성공" });
       res.redirect("/");
     });
 
