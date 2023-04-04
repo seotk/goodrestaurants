@@ -103,7 +103,6 @@ async function main() {
       req.body._id = parseInt(req.body._id);
       await postCollection.deleteOne(req.body);
       res.status(200).send({ message: "성공" });
-      res.redirect("/");
     });
 
     //PUT
@@ -147,7 +146,7 @@ async function main() {
         }
       );
       console.log("수정완료");
-      res.redirect("/");
+      res.status(200).send({ message: "성공" });
     });
 
     app.put("/good", async (req, res) => {

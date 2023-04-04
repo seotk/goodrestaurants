@@ -81,7 +81,6 @@ img {
   margin: auto;
   margin-top: 65px;
   display: flex;
-  height: 650px;
   padding: 1rem;
 }
 .detailCon1,
@@ -139,6 +138,12 @@ img {
   height: 200px;
   background-color: #eaeaea;
   width: 100%;
+  white-space: pre-wrap;
+}
+.detailDetail span {
+  width: 100%;
+  white-space: wrap;
+  overflow: hidden;
 }
 .edit {
   margin-top: 0.1rem;
@@ -163,3 +168,37 @@ img {
   margin: auto;
   height: 300px;
 }
+@media (max-width: 900px) {
+  .detailContentsWrap {
+    flex-direction: column;
+  }
+  .detailCon1,
+  .detailCon2 {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .deleteModal {
+    width: 70%;
+  }
+  .deleteModal > p {
+  }
+}
+@media (max-width: 460px) {
+  .detailText {
+    padding: 1rem 1.5rem;
+  }
+  .detailText > .detailName > span {
+    font-size: 20px;
+  }
+  .detailText > p > span {
+    font-size: 14px;
+  }
+  .detailText > p > img {
+    width: 20px;
+  }
+  .detailText > .detailAdress > img {
+    width: 18px;
+    margin-left: 1px;
+  }
+} ;

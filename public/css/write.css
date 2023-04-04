@@ -136,3 +136,63 @@ label:nth-child() {
   margin-top: 2rem;
   background-color: #70d7ff;
 }
+
+@media (max-width: 700px) {
+  h1 > img {
+    display: none;
+  }
+  .mw1150 {
+  }
+
+  .banner1 {
+    border-radius: 10px 10px 0 0;
+  }
+  .banner2 {
+    border-radius: 0 0 10px 10px;
+  }
+  .food,
+  .detail,
+  .adress,
+  .img,
+  .acoords,
+  .name,
+  .star {
+    width: 100%;
+  }
+  .key {
+    width: 24%;
+  }
+  #name,
+  #time,
+  #tel {
+    width: 100%;
+  }
+  #star {
+    width: 30%;
+  }
+  .starStandard {
+    width: 30%;
+    top: 86px;
+    right: 30%;
+    font-size: 24px;
+  }
+  label {
+    font-size: 20px;
+  }
+  .key > label {
+    font-size: 14px;
+  }
+  .formList {
+    padding: 1rem;
+  }
+}
+@media (max-width: 460px) {
+  .listBtn {
+    padding: 0.5rem 1.2rem;
+    font-size: 16px;
+    margin: 0.6rem;
+  }
+  .listContainer {
+    padding: 1rem;
+  }
+}

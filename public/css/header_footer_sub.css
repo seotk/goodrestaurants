@@ -97,7 +97,9 @@ h1 > img {
   font-weight: 700;
   padding-top: 1rem;
 }
-
+.arrow > img {
+  display: none;
+}
 @media (max-width: 900px) {
   .hdCon {
     justify-content: flex-end;
@@ -109,8 +111,16 @@ h1 > img {
   }
 }
 @media (max-width: 700px) {
-  h1 > img {
-    width: 80px;
+  h1 {
+    display: none;
+    flex-grow: 0;
+  }
+  .arrow {
+    cursor: pointer;
+  }
+  .arrow > img {
+    display: block;
+    width: 20px;
   }
   .hd {
     margin: 0 1rem;
@@ -118,6 +128,7 @@ h1 > img {
     margin-top: 3rem;
   }
   .hdCon {
+    justify-content: space-between;
   }
   .title {
     display: inline-block;
@@ -130,4 +141,5 @@ h1 > img {
   .ftCon {
     padding: 0.5rem 1rem;
   }
+
 }

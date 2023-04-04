@@ -1,6 +1,7 @@
 @charset "utf-8";
 :root {
   --point-color1: #ff7012;
+  font-family: "Noto Sans KR", sans-serif;
 }
 img {
   width: 100%;
@@ -130,22 +131,39 @@ img {
 
 @media (max-width: 700px) {
   .mw1150 {
-    margin: 0;
     width: 100%;
   }
   .menuMo {
     display: block;
-    margin-top: 2rem;
+    margin: 2rem 0;
     padding: 1rem 2rem;
     background-color: aqua;
     cursor: pointer;
+    border-radius: 10px;
   }
-  .menuMo > span {
-    font-weight: 700;
+  .menuMo > a {
+    font-weight: 500;
   }
   .banner1 {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .banner1 > p {
+    padding-bottom: 0;
+  }
+  .banner2 {
+    border-radius: 0 0 10px 10px;
+  }
+}
+@media (max-width: 460px) {
+  .listBtn {
+    padding: 0.5rem 1.2rem;
+    font-size: 16px;
+    margin: 0.6rem;
+  }
+  .listContainer {
+    padding: 1rem;
   }
 }
