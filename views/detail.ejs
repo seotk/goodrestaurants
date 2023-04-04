@@ -90,17 +90,17 @@
       <div class="deleteModal">
         <p><span>정말로 삭제 하시겠습니까?</span></p>
         <button class="cancel">뒤로가기</button>
-        <button class="deleteOk" data-id=" <%= data._id%>">
-          삭제
-        </button>
+        <button class="deleteOk" data-id=" <%= data._id%>">삭제</button>
       </div>
     </div>
     <%- include('footer.ejs') %>
     <script>
       window.addEventListener("resize", function () {
-        setTimeout(function () {
-          location.reload();
-        }, 3000); // 3초(3000ms) 후에 리로드
+        if (window.innerWidth > 500) {
+          setTimeout(function () {
+            location.reload();
+          }, 3000);
+        }
       });
 
       var container = document.getElementById("map");
