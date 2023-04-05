@@ -98,6 +98,25 @@ async function main() {
       res.redirect("/");
     });
 
+    // app.post('/sendCoords', (req, res) => {
+    //   // 클라이언트로부터 좌표 값이 전송된 경우
+    //   if (req.body.coords) {
+    //     // 받은 좌표 값을 출력합니다.
+    //     console.log(`Coords received: ${req.body.coords}`);
+
+    //     // coords 변수를 선언합니다.
+    //     const coords = req.body.coords;
+
+    //     // 클라이언트에게 JSON 형식으로 응답합니다.
+    //     res.json({ message: 'Coords received' });
+
+    //     // write.ejs 파일에 좌표 값을 전달합니다.
+    //     res.render("write.ejs", { coords: coords });
+    //   } else {
+    //     res.status(400).json({ error: 'Invalid request' });
+    //   }
+    // });
+
     // DELETE
     app.delete("/delete", async function (req, res) {
       req.body._id = parseInt(req.body._id);

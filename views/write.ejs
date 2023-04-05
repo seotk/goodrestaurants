@@ -15,13 +15,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ce3cfa54254b44c4bca4bb53b340f51e"
+    ></script>
     <script src="/js/click.js" defer></script>
     <script src="/js/key.js" defer></script>
     <script src="/js/input.js" defer></script>
+    <script src="/js/map.js" defer></script>
 
     <link rel="stylesheet" href="/css/header_footer_sub.css" />
     <link rel="stylesheet" href="/css/write.css" />
-    <title>goodrestaurant-write</title>
+    <link rel="shortcut icon" type="image/png" href="/img/logo.svg" />
+    <title>등록하기 | SEO</title>
   </head>
   <body>
     <%- include('header_sub.ejs') %>
@@ -80,10 +86,10 @@
           <p class="adress">
             <label>주소<input type="text" id="adress" name="adress" /></label>
           </p>
-          <p class="acoords">
-            <label
-              >좌표<span>,를 기준으로 앞뒤로 값을 넣어주세요!</span
-              ><input type="text" id="acoords" name="acoords" value=","
+          <p class="acoords" id="result-text">
+            <label>
+              좌표<span>,를 기준으로 앞뒤로 값을 넣어주세요!</span>
+              <input type="text" id="result-text" name="acoords" value=""
             /></label>
           </p>
           <a href="/acoords" class="acoordsSearh"> 좌표구하기</a>

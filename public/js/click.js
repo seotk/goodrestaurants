@@ -15,6 +15,17 @@ $(".arrow").click(function (e) {
     },
   });
 });
+$(".back").click(function (e) {
+  $.ajax({
+    success: function (response) {
+      // 성공적으로 응답을 받았을 때 이전 페이지로 이동
+      history.back();
+    },
+    error: function (xhr, status, error) {
+      // 오류 발생 시 처리할 코드
+    },
+  });
+});
 
 $(".deleteOk").click(function (e) {
   let number = e.target.dataset.id;

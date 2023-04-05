@@ -17,11 +17,11 @@
     <script src="/js/click.js" defer></script>
     <script src="/js/key.js" defer></script>
     <script src="/js/input.js" defer></script>
+    <script src="/js/map.js" defer></script>
 
     <link rel="stylesheet" href="/css/header_footer_sub.css" />
     <link rel="stylesheet" href="/css/write.css" />
-    <link rel="shortcut icon" type="image/png" href="/img/logo.svg" />
-    <title>좌표구하기 | SEO</title>
+    <title>goodrestaurant-write</title>
     <style>
       body {
         margin: 0;
@@ -42,16 +42,27 @@
   </head>
   <body>
     <div id="map"></div>
-    <form id="search-form">
+    <form id="search-form" action="/getCoords?_method=post" method="post">
       <input type="text" id="address-input" placeholder="주소를 입력하세요" />
-      <button type="submit">검색</button>
+      <button type="submit" class="searchAccoords">검색</button>
     </form>
-    <button class="back">돌아가기</button>
+    <div class="result-text"></div>
     <script
       type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ce3cfa54254b44c4bca4bb53b340f51e&libraries=services"
     ></script>
     <script>
+      function copyToClipboard(text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            console.log(`Copied ${text} to clipboard`);
+          })
+          .catch((err) => {
+            console.error(`Error copying to clipboard: ${err}`);
+          });
+      }
+
       var map = new kakao.maps.Map(document.getElementById("map"), {
         center: new kakao.maps.LatLng(37.54699, 127.09598),
         level: 5,
@@ -69,34 +80,26 @@
           // 주소로 좌표를 검색합니다
           geocoder.addressSearch(addressInput.value, function (result, status) {
             if (status === kakao.maps.services.Status.OK) {
-              // 서태규 작업 내용
-              // 검색된 좌표를 변수에 저장합니다
-              var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-              // alert("입력한 주소의 좌표는 " + coords.toString() + " 입니다.");
-
-              // 강사수정
-              // 클립보드 복사방법 참고
-              //https://joshua-dev-story.blogspot.com/2020/10/javascript-copy-to-clipboard.html#toc-58-3
-
-              //옛날방법 검색된 좌표를 clipboard에 복사하는 기능을 추가합니다
-              let dummy = document.createElement("textarea");
-              document.body.appendChild(dummy);
-              dummy.value = coords
-                .toString()
-                .replace(/[()]/g, "")
-                .replace(", ", ",");
-              dummy.select();
-              document.execCommand("copy");
-              document.body.removeChild(dummy);
-              alert("좌표가 클립보드에 복사되었습니다.");
-
-              // clipboard.js를 이용하여 검색된 좌표를 clipboard에 복사하는 기능을 추가합니다
-              // https://clipboardjs.com/
-
-              // 검색된 좌표로 지도 중심을 이동시킵니다
-              map.setCenter(coords);
+              var myCoords = new kakao.maps.LatLng(result[0].y, result[0].x);
+              fetch("/sendCoords", {
+                method: "POST",
+                body: JSON.stringify({ coords: myCoords.toString() }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  document.getElementById("result-text").value =
+                    myCoords.toString();
+                  console.log(data);
+                })
+                .catch((error) => {
+                  console.error(error);
+                });
+              alert("입력한 주소의 좌표는 " + myCoords.toString() + " 입니다.");
+              map.setCenter(myCoords);
             } else {
-              // 검색 실패 시 예시 좌표로 이동합니다
               var exampleCoords = new kakao.maps.LatLng(37.54699, 127.09598);
               alert(
                 "검색 실패! 예시 좌표 " +
