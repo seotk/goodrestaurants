@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  max-width: 1150px;
+
+  width: calc(100% - 2rem);
+  height: 300px;
+  margin: auto;
+}
+#search-form {
+  max-width: 1150px;
+  width: calc(100% - 2rem);
+  margin: auto;
+  z-index: 1;
+}
+.searchCon {
+  margin: auto;
+}
+.hdCon {
+  width: calc(100% - 2rem);
+}
+#coordinates,
+.backBtn {
+  max-width: 1150px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+.back,
+#copy-coords-btn,
+#search-btn {
+  cursor: pointer;
+  width: 10%;
+  margin: auto;
+  margin-top: 2rem;
+  background-color: #70d7ff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+@media (max-width: 460px) {
+  .back,
+  #copy-coords-btn,
+  #search-btn {
+  width: 30%;
+
+  }
+}

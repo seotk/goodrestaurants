@@ -20,30 +20,9 @@
 
     <link rel="stylesheet" href="/css/header_footer_sub.css" />
     <link rel="stylesheet" href="/css/write.css" />
+    <link rel="stylesheet" href="/css/acoords.css" />
     <link rel="shortcut icon" type="image/png" href="/img/logo.svg" />
     <title>좌표구하기 | SEO</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        width: calc(100% - 2rem);
-        height: 300px;
-        margin: auto;
-      }
-      #search-form {
-        width: calc(100% - 2rem);
-        margin: auto;
-        z-index: 1;
-      }
-      .searchCon {
-        margin: auto;
-      }
-      .hdCon {
-        width: calc(100% - 2rem);
-      }
-    </style>
   </head>
   <body>
     <%- include('header_sub.ejs') %>
@@ -55,10 +34,15 @@
     <section class="banner2 mw1150">
       <span>좌표 구하기</span>
     </section>
+    <div class="backBtn"><button class="back">뒤로가기</button></div>
     <form id="search-form">
       <input type="text" id="address-input" placeholder="주소를 입력하세요" />
-      <button type="submit">검색</button>
+      <button id="search-btn" type="submit">검색</button>
     </form>
+    <div id="coordinates">
+      <span id="coords-text"></span>
+      <button id="copy-coords-btn">복사</button>
+    </div>
     <div id="map"></div>
     <script
       type="text/javascript"
@@ -82,37 +66,37 @@
           // 주소로 좌표를 검색합니다
           geocoder.addressSearch(addressInput.value, function (result, status) {
             if (status === kakao.maps.services.Status.OK) {
-              // 서태규 작업 내용
               // 검색된 좌표를 변수에 저장합니다
               var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-              // alert("입력한 주소의 좌표는 " + coords.toString() + " 입니다.");
 
-              // 강사수정
-              // 클립보드 복사방법 참고
-              //https://joshua-dev-story.blogspot.com/2020/10/javascript-copy-to-clipboard.html#toc-58-3
+              // 좌표를 보여줄 span 요소를 선택합니다
+              var coordsText = document.getElementById("coords-text");
+              // 좌표를 보여줍니다
+              coordsText.innerText =
+                `찾은 위치의 좌표는` +
+                coords.toString().replace(/[()]/g, "").replace(", ", ",");
 
-              //옛날방법 검색된 좌표를 clipboard에 복사하는 기능을 추가합니다
-              if (navigator.clipboard) {
-                navigator.clipboard.writeText(
-                  coords.toString().replace(/[()]/g, "").replace(", ", ",")
-                );
-                alert("좌표가 클립보드에 복사되었습니다.");
-              } else {
-                // clipboard API가 지원되지 않는 경우 예전 방식으로 처리
-                let dummy = document.createElement("textarea");
-                document.body.appendChild(dummy);
-                dummy.value = coords
-                  .toString()
-                  .replace(/[()]/g, "")
-                  .replace(", ", ",");
-                dummy.select();
-                document.execCommand("copy");
-                document.body.removeChild(dummy);
-                alert("좌표가 클립보드에 복사되었습니다.");
-              }
-
-              // clipboard.js를 이용하여 검색된 좌표를 clipboard에 복사하는 기능을 추가합니다
-              // https://clipboardjs.com/
+              // 복사 버튼을 클릭하면 클립보드에 좌표를 복사합니다
+              var copyBtn = document.getElementById("copy-coords-btn");
+              copyBtn.addEventListener("click", function () {
+                if (navigator.clipboard) {
+                  navigator.clipboard.writeText(
+                    coords.toString().replace(/[()]/g, "").replace(", ", ",")
+                  );
+                  alert("좌표가 클립보드에 복사되었습니다.");
+                } else {
+                  let dummy = document.createElement("textarea");
+                  document.body.appendChild(dummy);
+                  dummy.value = coords
+                    .toString()
+                    .replace(/[()]/g, "")
+                    .replace(", ", ",");
+                  dummy.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(dummy);
+                  alert("좌표가 클립보드에 복사되었습니다.");
+                }
+              });
 
               // 검색된 좌표로 지도 중심을 이동시킵니다
               map.setCenter(coords);
