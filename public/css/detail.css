@@ -197,8 +197,12 @@ img {
   .detailText > p > img {
     width: 20px;
   }
-  .detailText > .detailAdress > img {
+  .detailText .detailAdress > img {
     width: 18px;
     margin-left: 1px;
+  }
+  .detailText > .detailAdress > span {
+    font-size: 12px;
+    white-space: nowrap;
   }
 } ;

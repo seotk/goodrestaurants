@@ -6,9 +6,6 @@
 
 이 프로젝트는 맛집 추천 사이트를 개발하는 것을 목표로 합니다. 리뷰를 작성하고, 다른 사용자의 리뷰를 볼 수 있습니다. 맛집 정보는 사용자가 직접 등록할 수 있으며, 여러 음식 카테고리에 맛집을 찾을 수 있습니다. 이 프로젝트는 Node.js와 Express를 사용하여 백엔드를 구현하고, MongoDB를 데이터베이스로 사용합니다. 프론트엔드는 HTML, CSS, JavaScript를 사용하여 구현하였습니다. 이를 통해 사용자 친화적인 맛집 추천 사이트를 구현하고자 합니다.
 
-## URL
-https://port-0-project3-1msx2blg1j8vdf.sel3.cloudtype.app/
-
 ## 시안
 
 <div style="display:flex">

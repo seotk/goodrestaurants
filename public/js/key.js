@@ -5,6 +5,6 @@ keyInputs.forEach((input) => {
     if (input.value !== "#" && input.value !== "") {
       return;
     }
-    input.value = "#";
+    input.value = "";
   });
 });

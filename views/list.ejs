@@ -53,11 +53,25 @@
             <img class="listImg" src="<%= post[list].postImg%>" alt="식당 이미지"></img>
             <div class="listText">
               <p class="listKeyWord">
-                <span><%= post[list].postKey1%></span>
-                <span><%= post[list].postKey2%></span>
-                <span><%= post[list].postKey3%></span>
-                <span><%= post[list].postKey4%></span>
+                <% if (post[list].postKey1.charAt(0) !== ""
+                ) { %>
+                <span>#<%= post[list].postKey1 %></span>
+                <% } %>
+                <% if (post[list].postKey2.charAt(0) !== ""
+                ) { %>
+                <span>#<%= post[list].postKey2 %></span>
+                <% } %>
+                <% if (post[list].postKey3.charAt(0) !== ""
+                ) { %>
+                <span>#<%= post[list].postKey3 %></span>
+                <% } %>
+                <% if (post[list].postKey4.charAt(0) !== ""
+                ) { %>
+                <span>#<%= post[list].postKey4 %></span>
+                <% } %>
+
               </p>
+              
               <p class="listTitle">
                 <span class="listName"><%= post[list].postName%></span>
                 <span class="listStar"><%= post[list].postStar%></span>

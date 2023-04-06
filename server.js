@@ -24,6 +24,7 @@ async function main() {
     console.log("서버에 연결됬다");
 
     //GET
+
     app.get("/", async (req, res) => {
       // const query = {};
       const cursor = postCollection.find({});
